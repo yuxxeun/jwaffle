@@ -5,6 +5,14 @@
  */
 package kriido.menu.makanan;
 
+// this if for (name) combo box button action perform
+//  if(cbSoto.isSelected == true){
+//      tfSoto.setEditable(true);
+//  } else {
+//      tfSoto.setEditable(false);
+//      tfSoto.setText("");
+//  }
+
 /**
  *
  * @author explorer
@@ -50,6 +58,11 @@ public class MenuMakanan extends javax.swing.JFrame {
 
         cbSoto.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
         cbSoto.setLabel("Soto : 5000");
+        cbSoto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cbSotoMouseClicked(evt);
+            }
+        });
 
         cbRawon.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
         cbRawon.setLabel("Rawon : 6000");
@@ -66,12 +79,16 @@ public class MenuMakanan extends javax.swing.JFrame {
             }
         });
 
+        tfSoto.setEditable(false);
+
+        tfRawon.setEditable(false);
         tfRawon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfRawonActionPerformed(evt);
             }
         });
 
+        tfBakso.setEditable(false);
         tfBakso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfBaksoActionPerformed(evt);
@@ -89,9 +106,19 @@ public class MenuMakanan extends javax.swing.JFrame {
 
         bHitung.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
         bHitung.setLabel("Hitung");
+        bHitung.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bHitungActionPerformed(evt);
+            }
+        });
 
         bClear.setFont(new java.awt.Font("Raleway", 0, 14)); // NOI18N
         bClear.setLabel("Clear");
+        bClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bClearActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -205,9 +232,54 @@ public class MenuMakanan extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfRawonActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void cbSotoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbSotoMouseClicked
+        
+        
+    }//GEN-LAST:event_cbSotoMouseClicked
+
+    private void bHitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHitungActionPerformed
+        int total = 0;
+        
+        // for soto
+        if(cbSoto.isSelected()) {
+            String soto = tfSoto.getText();
+            int jumlahSoto = Integer.parseInt(soto);
+            int hargaSoto = jumlahSoto * 5000;
+            total = total + hargaSoto;
+        }
+        if(cbBakso.isSelected()) {
+            String bakso = tfBakso.getText();
+            int jumlahBakso = Integer.parseInt(bakso);
+            int hargaBakso = jumlahBakso * 5000;
+            total = total + hargaBakso;
+        }
+        if(cbRawon.isSelected()) {
+            String rawon = tfRawon.getText();
+            int jumlahRawon = Integer.parseInt(rawon);
+            int hargaRawon = jumlahRawon * 5000;
+            total = total + hargaRawon;
+        }
+        if(cbGudeg.isSelected()) {
+            String gudeg = tfGudeg.getText();
+            int jumlahGudeg = Integer.parseInt(gudeg);
+            int hargaGudeg = jumlahGudeg * 5000;
+            total = total + hargaGudeg;
+        }
+        tfTotal.setText("" + total);
+    }//GEN-LAST:event_bHitungActionPerformed
+
+    private void bClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bClearActionPerformed
+        tfSoto.setEditable(false);
+        tfSoto.setText("");
+        tfRawon.setEditable(false);
+        tfRawon.setText("");
+        tfBakso.setEditable(false);
+        tfBakso.setText("");
+        tfGudeg.setEditable(false);
+        tfGudeg.setText("");
+        tfTotal.setText("");
+    }//GEN-LAST:event_bClearActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
