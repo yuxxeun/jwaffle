@@ -5,6 +5,8 @@
  */
 package Project;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author LENOVO
@@ -168,15 +170,15 @@ public class Database extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tfBaksoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfBaksoActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_tfBaksoActionPerformed
 
     private void tfSotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfSotoActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_tfSotoActionPerformed
 
     private void cbSotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbSotoActionPerformed
-        // TODO add your handling code here:
+        
         if (cbSoto.isSelected() == true){
             tfSoto.setEditable(true);
         }
@@ -187,38 +189,57 @@ public class Database extends javax.swing.JFrame {
     }//GEN-LAST:event_cbSotoActionPerformed
 
     private void bHitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHitungActionPerformed
-        // TODO add your handling code here:
+        
         int total = 0;
         
         if(cbSoto.isSelected()) {
-            String soto = tfSoto.getText();
-            int jumlahSoto = Integer.parseInt(soto);
-            int hargaSoto = jumlahSoto * 5000;
-            total = total + hargaSoto;
+            if(tfSoto.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Upss jumlah pesanan belum terisi", "UPS!!!", JOptionPane.ERROR_MESSAGE);
+            } else {
+                String soto = tfSoto.getText();
+                int jumlahSoto = Integer.parseInt(soto);
+                int hargaSoto = jumlahSoto * 5000;
+                total = total + hargaSoto;
+            }
         }
         if(cbBakso.isSelected()) {
-            String bakso = tfBakso.getText();
-            int jumlahBakso = Integer.parseInt(bakso);
-            int hargaBakso = jumlahBakso * 5000;
-            total = total + hargaBakso;
+            if(tfBakso.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Upss jumlah pesanan belum terisi", "UPS!!!", JOptionPane.ERROR_MESSAGE);
+            } else {
+                String bakso = tfBakso.getText();
+                int jumlahBakso = Integer.parseInt(bakso);
+                int hargaBakso = jumlahBakso * 5000;
+                total = total + hargaBakso;
+            }
         }
+        
         if(cbRawon.isSelected()) {
-            String rawon = tfRawon.getText();
-            int jumlahRawon = Integer.parseInt(rawon);
-            int hargaRawon = jumlahRawon * 5000;
-            total = total + hargaRawon;
+            if(tfRawon.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Upss jumlah pesanan belum terisi", "UPS!!!", JOptionPane.ERROR_MESSAGE);
+            } else {
+                String rawon = tfRawon.getText();
+                int jumlahRawon = Integer.parseInt(rawon);
+                int hargaRawon = jumlahRawon * 5000;
+                total = total + hargaRawon;
+            }
         }
+        
         if(cbGudeg.isSelected()) {
-            String gudeg = tfGudeg.getText();
-            int jumlahGudeg = Integer.parseInt(gudeg);
-            int hargaGudeg = jumlahGudeg * 5000;
-            total = total + hargaGudeg;
+            if(tfGudeg.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Upss jumlah pesanan belum terisi", "UPS!!!", JOptionPane.ERROR_MESSAGE);
+            } else {
+                String rawon = tfRawon.getText();
+                int jumlahRawon = Integer.parseInt(rawon);
+                int hargaRawon = jumlahRawon * 5000;
+                total = total + hargaRawon;
+            }
         }
+       
         tfTotal.setText("" + total);
     }//GEN-LAST:event_bHitungActionPerformed
 
     private void bClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bClearActionPerformed
-        // TODO add your handling code here:
+        
         tfSoto.setEditable(false);
         tfSoto.setText("");
         tfRawon.setEditable(false);
@@ -231,7 +252,7 @@ public class Database extends javax.swing.JFrame {
     }//GEN-LAST:event_bClearActionPerformed
 
     private void cbRawonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbRawonActionPerformed
-        // TODO add your handling code here:
+        
         if (cbRawon.isSelected() == true){
             tfRawon.setEditable(true);
         }
@@ -242,7 +263,7 @@ public class Database extends javax.swing.JFrame {
     }//GEN-LAST:event_cbRawonActionPerformed
 
     private void cbBaksoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbBaksoActionPerformed
-        // TODO add your handling code here:
+        
         if (cbBakso.isSelected() == true){
             tfBakso.setEditable(true);
         }
@@ -253,7 +274,7 @@ public class Database extends javax.swing.JFrame {
     }//GEN-LAST:event_cbBaksoActionPerformed
 
     private void cbGudegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbGudegActionPerformed
-        // TODO add your handling code here:
+        
         if (cbGudeg.isSelected() == true){
             tfGudeg.setEditable(true);
         }
