@@ -1,2 +1,2 @@
-# Latar Belakang
- Complete PR's Hacktoberfest2020 && PBO task
+# README
+So, This is my personal repo, if you want to contribute please I would be very grateful.
